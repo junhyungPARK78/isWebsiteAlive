@@ -1,7 +1,7 @@
 # isWebsiteAlive
 
 **파이썬 버전**
-Python 3.9.10
+Python 3.9.13
 
 **이전 스크립트 내용**
 https://script.google.com/home/projects/1UDGucuwfUK2_jRdh9-6WvyuEte73oM1qOvPFo2YFo5N_8Xbasinxmwh8/edit
