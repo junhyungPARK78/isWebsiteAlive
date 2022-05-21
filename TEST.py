@@ -3,8 +3,7 @@ from resources import sendMail
 from resources import canConnectWeb
 
 url = ""
-url = "https://naver.com"
-url = "https://jidae.com"
+
 # url = "https://jidaeee.com"
 # url = "https://ruliweb.com"
 # url = "https://naver.com/1"
@@ -12,6 +11,20 @@ url = "https://jidae.com"
 # url = "https://jidae.com/2021/03/02/immediatelyBankTransfer/"
 
 # sendMail.sendMail()
-print(canConnectWeb.canConnectWeb(url))
+# print(canConnectWeb.canConnectWeb(url))
 
-# commit test
+url1 = "https://naver.com"
+url2 = "https://jidae.com"
+
+mail1 = "zxc@gmail.com"
+mail2 = "asd@gmail.com"
+mail3 = "qwe@gmail.com"
+
+groupData = {
+    url1: [mail1, mail2],
+    url2: [mail3]
+}
+
+print(groupData)
+print(groupData[url2])
+# print(groupData["https://jidae.com"])
