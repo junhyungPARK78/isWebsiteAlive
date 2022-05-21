@@ -13,3 +13,5 @@ url = "https://jidae.com"
 
 # sendMail.sendMail()
 print(canConnectWeb.canConnectWeb(url))
+
+# commit test
