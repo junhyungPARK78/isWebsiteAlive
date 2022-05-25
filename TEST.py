@@ -4,7 +4,7 @@ import time
 from resources import sendMail
 from resources import canConnectWeb
 
-print(canConnectWeb.canConnectWeb(url))
+print(canConnectWeb.canConnectWeb("https://ruliweb.com"))
 sendMail.sendMail()
 
 saveData = {

@@ -1,2 +1,5 @@
 isWebsiteAlive_venv
 resources/__pycache__
+TEST.spec
+dist
+build
