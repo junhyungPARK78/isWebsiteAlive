@@ -2,36 +2,31 @@
 # https://pjw48.net/wordpress/2017/03/22/make-json-py/
 # https://pjw48.net/wordpress/2017/03/23/json-parsing-py/
 
-import sys
 import os
 import json
 
-# def resource_path(filename):
-#     if hasattr(sys, '_MEIPASS'):
-#         return os.path.join(sys._MEIPASS, filename)
-#     return os.path.join(os.path.abspath("."), filename)
-
-# with open(resource_path('resources/saveData.json'), 'r') as f:
-#     print(f.read())
-
+# 세이브 데이터 path 지정
 resourcesPath = os.path.abspath("resources")
 saveJsonPath = f'{resourcesPath}/saveData.json'
-print(f"saveJsonPath : {saveJsonPath}")
 
-saveData = {}
+# Reset JSON
+def resetSaveData():
+    defaultData = {}
 
-# 세이브 데이터 구조체 Start
-saveData["https://ruliweb.com"] = {}
-saveData["https://ruliweb.com"]["connectStatus"] = True
-saveData["https://ruliweb.com"]["mails"] = ["createzone@gmail.com", "ireieri@me.com"]
+    # 세이브 데이터 구조체 Start
+    defaultData["https://ruliweb.com"] = {}
+    defaultData["https://ruliweb.com"]["connectStatus"] = True
+    defaultData["https://ruliweb.com"]["mails"] = ["createzone@gmail.com", "ireieri@me.com"]
 
-saveData["https://jidae.com"] = {}
-saveData["https://jidae.com"]["connectStatus"] = True
-saveData["https://jidae.com"]["mails"] = ["createzone@gmail.com"]
-# 세이브 데이터 구조체 End
+    defaultData["https://jidae.com"] = {}
+    defaultData["https://jidae.com"]["connectStatus"] = True
+    defaultData["https://jidae.com"]["mails"] = ["createzone@gmail.com"]
+    # 세이브 데이터 구조체 End
+
+    writeSaveData(defaultData)
 
 # Write JSON
-def writeSaveData():
+def writeSaveData(saveData):
     with open(saveJsonPath, 'w', encoding="utf-8") as make_file:
         json.dump(saveData, make_file, ensure_ascii=False, indent="\t")
 
@@ -41,6 +36,9 @@ def openSaveData():
         savedData = json.load(data_file)
 
     return savedData
+
+if __name__=="__main__":
+    resetSaveData()
 
 # # Print JSON
 # print(json.dumps(saveData, ensure_ascii=False, indent="\t"))

@@ -11,7 +11,8 @@ https://docs.google.com/spreadsheets/d/1x-OR7nX4vt2pyUKpYhQCnB3SSnF2mRybr-z0aygl
 
 **pyinstaller 사용법**
 https://coding-kindergarten.tistory.com/84
-pyinstaller --onefile --windowed TEST.py
+먼저 spec파일을 만들어두고 : `pyinstaller --onefile --windowed TEST.py`
+그 후에는 이 명령으로 동일한 스펙의 실행파일을 만들 수 있다. : `pyinstaller TEST.spec`
 
 **VS code에서 가상환경 구축하는 방법**
 https://mr-spock.tistory.com/19
