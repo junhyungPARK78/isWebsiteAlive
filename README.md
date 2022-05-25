@@ -9,6 +9,9 @@ https://script.google.com/home/projects/1UDGucuwfUK2_jRdh9-6WvyuEte73oM1qOvPFo2Y
 **관련 시트**
 https://docs.google.com/spreadsheets/d/1x-OR7nX4vt2pyUKpYhQCnB3SSnF2mRybr-z0ayglY6w/edit#gid=0
 
+**VS code에서 가상환경 구축하는 방법**
+https://mr-spock.tistory.com/19
+
 **명령어 정리**
 - 가상 환경 만들기
   `python3 -m venv 가상 환경의 이름`
