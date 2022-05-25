@@ -41,3 +41,10 @@ schedule.every(3).seconds.do(message)
 while True:
     schedule.run_pending()
     time.sleep(1)
+
+# ======================================================
+# 참 거짓을 뒤집는 방법
+qwas = False
+print(qwas)
+print(not qwas)
+# ======================================================

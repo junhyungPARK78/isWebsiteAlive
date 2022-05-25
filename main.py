@@ -9,7 +9,7 @@ def message():
     print("스케쥴 실행중...")
 
 # step3.실행 주기 설정
-schedule.every(1).seconds.do(message)
+schedule.every(3).seconds.do(message)
 
 # step4.스캐쥴 시작
 while True:
