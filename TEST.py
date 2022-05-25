@@ -3,44 +3,35 @@ import schedule
 import time
 from resources import sendMail
 from resources import canConnectWeb
+from resources import withJson
 
 print(canConnectWeb.canConnectWeb("https://ruliweb.com"))
 sendMail.sendMail()
+# data = withJson.openSaveData()
 
-saveData = {
-    "https://ruliweb.com": {
-        "connectStatus": True,
-        "mails": ["createzone@gmail.com", "ireieri@me.com"],
-    },
-    "https://jidae.com": {
-        "connectStatus": True,
-        "mails": ["createzone@gmail.com"],
-    }
-}
+# # https://wikidocs.net/137924
 
-# https://wikidocs.net/137924
+# # step1.관련 패키지 및 모듈 import
 
-# step1.관련 패키지 및 모듈 import
+# # step2.실행할 함수 선언
+# def message():
+#     print(data)
+#     print(data["https://ruliweb.com"])
+#     print(data["https://ruliweb.com"]["connectStatus"])
+#     print(data["https://ruliweb.com"]["mails"])
+#     print(data["https://ruliweb.com"]["mails"][0])
+#     print(data["https://ruliweb.com"]["mails"][1])
+#     print(data["https://jidae.com"]["mails"])
+#     print(data["https://jidae.com"]["mails"][0])
 
-# step2.실행할 함수 선언
-def message():
-    print(saveData)
-    print(saveData["https://ruliweb.com"])
-    print(saveData["https://ruliweb.com"]["connectStatus"])
-    print(saveData["https://ruliweb.com"]["mails"])
-    print(saveData["https://ruliweb.com"]["mails"][0])
-    print(saveData["https://ruliweb.com"]["mails"][1])
-    print(saveData["https://jidae.com"]["mails"])
-    print(saveData["https://jidae.com"]["mails"][0])
+# # step3.실행 주기 설정
+# # schedule.every(60).minutes.do(message)
+# schedule.every(3).seconds.do(message)
 
-# step3.실행 주기 설정
-# schedule.every(60).minutes.do(message)
-schedule.every(3).seconds.do(message)
-
-# step4.스캐쥴 시작
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+# # step4.스캐쥴 시작
+# while True:
+#     schedule.run_pending()
+#     time.sleep(1)
 
 # ======================================================
 # 참 거짓을 뒤집는 방법
