@@ -11,7 +11,7 @@ https://docs.google.com/spreadsheets/d/1x-OR7nX4vt2pyUKpYhQCnB3SSnF2mRybr-z0aygl
 
 **pyinstaller 사용법**
 https://coding-kindergarten.tistory.com/84
-pyinstaller --onefile --windowed TEST.py
+pyinstaller --onefile --windowed main.py
 
 **VS code에서 가상환경 구축하는 방법**
 https://mr-spock.tistory.com/19
