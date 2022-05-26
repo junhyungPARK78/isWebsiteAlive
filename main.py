@@ -5,6 +5,7 @@ import time
 from resources import withJson
 from resources import canConnectWeb
 from resources import sendMail
+from resources import sendLineMsg
 
 def checkWebsite():
     data = withJson.openSaveData()
@@ -20,22 +21,25 @@ def checkWebsite():
         # 세이브 데이터의 웹페이지 접속가능 여부와 현재 상태의 비교
         if oldStatus == newStatus:
             print((
-                # f"======================================================\n"
+                f"=============================\n"
                 f"`{keyWebpage}`\n"
+                f"=============================\n"
                 f"접속 스테이터스가 변하지 않았습니다."
             ))
         else:
             print((
-                # f"======================================================\n"
+                f"=============================\n"
                 f"`{keyWebpage}`\n"
+                f"=============================\n"
                 f"접속 스테이터스가 변했습니다."
             ))
 
             # 메일 내용 생성
             statusName = {True: "접속 가능", False: "접속 불가능"}
             mailContent = (
-                # f"======================================================\n"
-                f"확인 시간 : {time.strftime('%Y-%m-%d %H:%M:%S')}\n\n"
+                f"=============================\n"
+                f"확인 시간 : {time.strftime('%Y-%m-%d %H:%M:%S')}\n"
+                f"=============================\n\n"
                 f"`{keyWebpage}`\n"
                 f"접속 상태가 「{statusName[oldStatus]}」에서 「{statusName[newStatus]}」으로 바뀌었습니다."
             )
@@ -49,6 +53,12 @@ def checkWebsite():
 
             # 메일 발송하기
             sendMail.sendMail(mailContent, mailSubject, mailSender, mailReceiverBcc)
+
+            # 라인 메세지 보내기
+            if data[keyWebpage]['shouldSendLineMsgAll']:
+                sendLineMsg.sendLineMsg(mailContent, True)
+            else:
+                sendLineMsg.sendLineMsg(mailContent, False)
 
 def testFunction():
     now = time.strftime('%Y-%m-%d %H:%M:%S')

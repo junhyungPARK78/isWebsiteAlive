@@ -25,6 +25,7 @@ def resetSaveData():
     # 세이브 데이터 구조체 Start
     defaultData["https://ruliweb.com"] = {}
     defaultData["https://ruliweb.com"]["connectStatus"] = True
+    defaultData["https://ruliweb.com"]["shouldSendLineMsgAll"] = True
     defaultData["https://ruliweb.com"]["mails"] = [
         "createzone@gmail.com",
         "ireieri@me.com",
@@ -32,6 +33,7 @@ def resetSaveData():
 
     defaultData["https://jidae.com"] = {}
     defaultData["https://jidae.com"]["connectStatus"] = True
+    defaultData["https://jidae.com"]["shouldSendLineMsgAll"] = False
     defaultData["https://jidae.com"]["mails"] = [
         "createzone@gmail.com",
         ]
