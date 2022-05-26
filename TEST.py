@@ -6,7 +6,13 @@ from resources import canConnectWeb
 from resources import withJson
 
 print(canConnectWeb.canConnectWeb("https://ruliweb.com"))
-sendMail.sendMail()
+
+now = time.strftime('%Y-%m-%d %H:%M:%S')
+mailContent = f'ruliweb.com\n의 접속 상태가 「접속 가능」에서 「접속 불가능」으로 바뀌었습니다.\n의 접속 상태가 「접속 불가능」에서 「접속 가능」으로 바뀌었습니다.\n\n변경 확인 시간 : {now}'
+mailSubject = "`ruliweb.com` 에 접속 가능 여부에 변경이 있었습니다."
+mailSender = 'createzonebot@gmail.com'
+mailReceiverBcc = 'createzone+TEST@gmail.com, createzone+TEST2@gmail.com'
+sendMail.sendMail(mailContent, mailSubject, mailSender, mailReceiverBcc)
 # data = withJson.openSaveData()
 
 # # https://wikidocs.net/137924

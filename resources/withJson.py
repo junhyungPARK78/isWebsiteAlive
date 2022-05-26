@@ -3,11 +3,20 @@
 # https://pjw48.net/wordpress/2017/03/23/json-parsing-py/
 
 import os
+import sys
 import json
 
 # 세이브 데이터 path 지정
-resourcesPath = os.path.abspath("resources")
-saveJsonPath = f'{resourcesPath}/saveData.json'
+filePath = ""
+
+if getattr(sys, 'frozen', False):
+    #test.exe로 실행한 경우,test.exe를 보관한 디렉토리의 full path를 취득
+    filePath = f"{os.path.dirname(os.path.abspath(sys.executable))}/resources"
+else:
+    #python test.py로 실행한 경우,test.py를 보관한 디렉토리의 full path를 취득
+    filePath = os.path.dirname(os.path.abspath(__file__))
+
+saveJsonPath = f"{filePath}/saveData.json"
 
 # Reset JSON
 def resetSaveData():
@@ -16,11 +25,16 @@ def resetSaveData():
     # 세이브 데이터 구조체 Start
     defaultData["https://ruliweb.com"] = {}
     defaultData["https://ruliweb.com"]["connectStatus"] = True
-    defaultData["https://ruliweb.com"]["mails"] = ["createzone@gmail.com", "ireieri@me.com"]
+    defaultData["https://ruliweb.com"]["mails"] = [
+        "createzone@gmail.com",
+        "ireieri@me.com",
+        ]
 
     defaultData["https://jidae.com"] = {}
     defaultData["https://jidae.com"]["connectStatus"] = True
-    defaultData["https://jidae.com"]["mails"] = ["createzone@gmail.com"]
+    defaultData["https://jidae.com"]["mails"] = [
+        "createzone@gmail.com",
+        ]
     # 세이브 데이터 구조체 End
 
     writeSaveData(defaultData)
